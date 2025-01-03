@@ -8,6 +8,10 @@ class SearchBar extends Component {
         super(props);
     }
 
+    changeValue = (event) => {
+        this.props.handleChange(event.target.value);
+    }
+
     render() {
         return(
             <div id="search-bar">
@@ -15,7 +19,7 @@ class SearchBar extends Component {
                     <FontAwesomeIcon icon={faSearch} />
                 </div>
                 <div>
-                    <input></input>
+                    <input onChange={this.changeValue}></input>
                 </div>
 
             </div>
