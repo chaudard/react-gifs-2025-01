@@ -1,10 +1,13 @@
-# boilerplateReact
+# react-gifs-2025-01
 React project using webpack
 
 - node : 20.16.0
 - react: ^19.0.0
 - webpack: ^5.97.1
 
+This repo fetchs gifs from giphy api, from a searchbar.
+
+User can select a gif by clicking an item in the list.
 
 ## Scripts
 
