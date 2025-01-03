@@ -9,7 +9,7 @@ class Gif extends Component {
     render() {
         return(
             <div>
-                <img src={this.props.gifUrl}></img>
+                <img src={this.props.url}></img>
             </div>
         )
     }
