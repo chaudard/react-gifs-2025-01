@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import SearchBar from "./search_bar";
 import Gif from "./gif";
 import GifList from "./gifList";
-import GIPHY_API_KEY from "../../credentials";
 
 class App extends Component {
     constructor(props) {
@@ -15,7 +14,8 @@ class App extends Component {
     }
 
     handleChange = (query) => {
-        const requestUrl = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
+        const API_KEY = process.env.GIPHY_API_KEY;
+        const requestUrl = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
         fetch(requestUrl)
             .then(response => response.json())
             .then((result) => {
