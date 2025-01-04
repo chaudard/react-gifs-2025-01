@@ -31,6 +31,7 @@ class App extends Component {
         return(
             <div className="flex-container">
                 <div id='flex-item-left'>
+                    <h1 className="text-center">type to search gifs</h1>
                     <div id='search'>
                         <SearchBar handleChange={this.handleChange}></SearchBar>
                     </div>
@@ -39,6 +40,7 @@ class App extends Component {
                     </div>
                 </div>
                 <div id='flex-item-right'>
+                    <h1 className="text-center">click to select gif</h1>
                     <GifList gifs={this.state.gifs} handleSelect={this.handleSelect}></GifList>
                 </div>
             </div>
