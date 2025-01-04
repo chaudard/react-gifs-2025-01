@@ -7,8 +7,12 @@ class GifList extends Component {
         super(props);
     }
 
+    handleClick = (clickedGifUrl) => {
+        return this.props.handleSelect(clickedGifUrl)
+    }
+
     renderList = () => {
-        return this.props.gifs.map(gif => {return <Gif url={gif.images.original.url} key={gif.images.original.url}></Gif>});
+        return this.props.gifs.map(gif => {return <Gif url={gif.images.original.url} key={gif.images.original.url} handleClick={this.handleClick}></Gif>});
     }
 
     render() {

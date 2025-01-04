@@ -8,7 +8,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state={
-            selectedGifUrl: "https://media3.giphy.com/media/a93jwI0wkWTQs/giphy.gif?cid=d2485151nbfj1btq6xwv4vp7mvq86h7q7lmltgvsqy99hofw&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+            selectedGifUrl: "",
             gifs: []
         }
     }
@@ -23,6 +23,10 @@ class App extends Component {
             });
     }
 
+    handleSelect = (clickedGifUrl) => {
+        this.setState({selectedGifUrl: clickedGifUrl})
+    } 
+
     render() {
         return(
             <div className="flex-container">
@@ -35,7 +39,7 @@ class App extends Component {
                     </div>
                 </div>
                 <div id='flex-item-right'>
-                    <GifList gifs={this.state.gifs}></GifList>
+                    <GifList gifs={this.state.gifs} handleSelect={this.handleSelect}></GifList>
                 </div>
             </div>
         )

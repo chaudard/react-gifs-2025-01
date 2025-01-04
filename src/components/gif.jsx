@@ -6,10 +6,14 @@ class Gif extends Component {
         super(props)
     }
 
+    handleClick = () => {
+        return this.props.handleClick(this.props.url)
+    }
+
     render() {
         return(
             <div>
-                <img src={this.props.url}></img>
+                <img src={this.props.url} onClick={this.handleClick}></img>
             </div>
         )
     }
